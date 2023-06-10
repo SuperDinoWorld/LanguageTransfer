@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@astrojs/solid-js": "^2.2.0",
@@ -19,9 +20,17 @@
   "devDependencies": {
     "@solidjs/testing-library": "^0.7.1",
     "@testing-library/jest-dom": "^5.16.5",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",
     "vitest": "^0.32.0"
+  },
+  "lint-staged": {
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "**/*.test.@(js|jsx|ts|tsx)": "npm run test"
   }
 }

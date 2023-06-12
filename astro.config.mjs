@@ -10,6 +10,11 @@ export default defineConfig({
     plugins: [
       vanillaExtractPlugin({
         emitCssInSsr: true,
+        esbuildOptions: {
+          loader: {
+            ".css": "empty",
+          },
+        },
       }),
     ],
   },

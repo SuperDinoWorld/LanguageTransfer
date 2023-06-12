@@ -5,7 +5,7 @@ import { Button } from ".";
 
 describe("App", () => {
   it("should render the app", () => {
-    const { getByText } = render(() => <Button>Click here</Button>);
+    const { getByText } = render(() => <Button label="Click here" />);
     expect(getByText("Click here")).toBeInTheDocument();
   });
 });
